@@ -57,18 +57,18 @@ export const init = (async () => {
   //   })
   // );
 
-  // app.use(express.static(path.join(__dirname, "../client/build")));
+  app.use(express.static(path.join(__dirname, "../client/build")));
 
   app.use("/api/v1", router);
   app.use(errorMiddleware);
 
-  // app.get("/*", (req, res) => {
-  //   res.sendFile(path.join(__dirname, "../client/build", "index.html"), (err) => {
-  //     if (err) {
-  //       console.log(err);
-  //     }
-  //   });
-  // });
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"), (err) => {
+      if (err) {
+        console.log(err);
+      }
+    });
+  });
 
   DI.server = app.listen(port, () => {
     console.log(
