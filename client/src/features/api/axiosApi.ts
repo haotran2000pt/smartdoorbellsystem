@@ -1,12 +1,9 @@
 import axios from "axios";
 import { getAccessToken, setAccessToken } from "src/utils/token.utils";
-import urlJoin from "url-join";
-
-const API_URL = "http://localhost:4000/";
 
 const ApiClient = () => {
   const instance = axios.create({
-    baseURL: urlJoin(API_URL, "/api/v1/"),
+    baseURL: "/api/v1/",
     withCredentials: true,
   });
 

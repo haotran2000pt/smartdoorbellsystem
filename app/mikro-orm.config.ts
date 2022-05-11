@@ -8,15 +8,16 @@ import {
   Notification,
   UserDevices,
 } from "./entities";
+import "dotenv/config";
 
 const options: Options = {
   type: "mysql",
   entities: [User, BaseEntity, Device, Notification, UserDevices],
-  host: "localhost",
+  host: process.env.DB_HOST,
   port: 3306,
-  user: "root",
-  password: "123456",
-  dbName: "smartdoor-bell-system",
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  dbName: process.env.DB_NAME,
   highlighter: new SqlHighlighter(),
   debug: true,
   metadataProvider: TsMorphMetadataProvider,

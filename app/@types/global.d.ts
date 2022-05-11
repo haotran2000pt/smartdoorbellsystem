@@ -7,5 +7,9 @@ declare namespace NodeJS {
     JWT_REFRESH_EXPIRATION_DAYS: string;
     JWT_RESET_PASSWORD_EXPIRATION_MINUTES: string;
     JWT_VERIFY_EMAIL_EXPIRATION_MINUTES: string;
+    DB_HOST: string;
+    DB_USER: string;
+    DB_PASSWORD: string;
+    DB_NAME: string;
   }
 }
