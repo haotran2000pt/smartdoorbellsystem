@@ -1,13 +1,14 @@
 import { Options } from "@mikro-orm/core";
 import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
-import "dotenv/config";
+import { SqlHighlighter } from "@mikro-orm/sql-highlighter";
 import {
+  User,
   BaseEntity,
   Device,
   Notification,
-  User,
   UserDevices,
 } from "./entities";
+import "dotenv/config";
 
 const options: Options = {
   type: "mysql",
@@ -17,6 +18,8 @@ const options: Options = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   dbName: process.env.DB_NAME,
+  highlighter: new SqlHighlighter(),
+  debug: true,
   metadataProvider: TsMorphMetadataProvider,
 };
 
