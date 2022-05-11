@@ -5,7 +5,7 @@
   "author": "Martin Adamek",
   "license": "MIT",
   "scripts": {
-    "start": "npm --prefix ./client run build && tsc && node dist/server",
+    "start": "tsc && node dist/server",
     "dev": "tsc-watch --onSuccess \"node dist/server\"",
     "start:prod": "tsc && node dist/server",
     "test": "jest --runInBand --silent"
